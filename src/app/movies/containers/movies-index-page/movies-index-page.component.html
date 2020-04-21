@@ -1,0 +1,22 @@
+<div class="row">
+  <h1 class="text-center col-6 offset-3 mt-3">
+    <!--    Welcome {{this.$store.state.auth.name}}!-->
+  </h1>
+
+  <div class="col-12 mt-3">
+    <div class="row">
+      <app-movie
+        *ngFor="let movie of movies; let i = index"
+        [movie]="movie"
+        [index]="i"></app-movie>
+    </div>
+  </div>
+
+  <div class="col-6 offset-3 mt-3">
+    <a routerLink="/movies/new" class="btn btn-success btn-block">
+      Add movie
+      <fa-icon [icon]="icons.plus"></fa-icon>
+    </a>
+  </div>
+
+</div>

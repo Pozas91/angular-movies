@@ -1,0 +1,36 @@
+<div class="col-6 offset-3">
+  <div class="card mt-5">
+    <h5 class="card-header">
+      Adding movie...
+    </h5>
+    <div class="card-body">
+
+      <div *ngIf="isLoading" class="text-center">
+        <app-loading-spinner></app-loading-spinner>
+      </div>
+
+      <form #createForm="ngForm" (ngSubmit)="onSubmit(createForm)" *ngIf="!isLoading">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" id="title" name="title" [(ngModel)]="movie.title"
+                 #title="ngModel" minlength="3" [class.is-invalid]="title.invalid" required/>
+
+          <div *ngIf="title.invalid && (title.dirty || title.touched)" class="invalid-feedback">
+            <div *ngIf="title.errors.required">
+              Title is required.
+            </div>
+
+            <div *ngIf="title.errors.minlength">
+              Title must be have at least {{title.errors.minlength.requiredLength}} characters length.
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-success" [disabled]="createForm.invalid">
+          Add
+          <fa-icon [icon]="icons.plus"></fa-icon>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

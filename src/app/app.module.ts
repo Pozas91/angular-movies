@@ -1,18 +1,45 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './core/containers/app/app.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {StoreModule} from '@ngrx/store';
+import {FormsModule} from '@angular/forms';
+import {SharedModule} from './shared/shared.module';
+import {HttpClientModule} from '@angular/common/http';
+import {appReducer} from './reducers/app.reducer';
+import {EffectsModule} from '@ngrx/effects';
+import {CoreModule} from './core/core.module';
+import {AuthModule} from './auth/auth.module';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {environment} from '../environments/environment';
+import {MoviesModule} from './movies/movies.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
+    // Libraries
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    FontAwesomeModule,
+    FormsModule,
+    // Modules
+    CoreModule,
+    SharedModule,
+    AuthModule,
+    MoviesModule,
+    AppRoutingModule,
+    // Development
+    StoreDevtoolsModule.instrument({
+      name: 'Movies App',
+      logOnly: environment.production
+    }),
+    // Store & Actions
+    StoreModule.forRoot(appReducer),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

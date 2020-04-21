@@ -1,0 +1,88 @@
+<div class="col-6 offset-3">
+  <div class="card mt-5">
+    <h5 class="card-header">
+      Please provide your data to register.
+    </h5>
+    <div class="card-body">
+
+      <div *ngIf="isLoading" class="text-center">
+        <app-loading-spinner></app-loading-spinner>
+      </div>
+
+      <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" *ngIf="!isLoading">
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name" [(ngModel)]="user.name"
+                 #name="ngModel" minlength="3" [class.is-invalid]="name.invalid" required/>
+
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
+            <div *ngIf="name.errors.required">
+              Name is required.
+            </div>
+
+            <div *ngIf="name.errors.minlength">
+              Name must be have at least {{name.errors.minlength.requiredLength}} characters length.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email"
+                 #email="ngModel" email [class.is-invalid]="email.invalid" required/>
+
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
+            <div *ngIf="email.errors.required">
+              Email is required.
+            </div>
+
+            <div *ngIf="email.errors.email">
+              Please, indicated a valid email address.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" required [(ngModel)]="user.password"
+                 #password="ngModel" minlength="4" [class.is-invalid]="password.invalid"/>
+
+          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="invalid-feedback">
+            <div *ngIf="password.errors.required">
+              Password is required.
+            </div>
+
+            <div *ngIf="password.errors.minlength">
+              Password must be have at least {{password.errors.minlength.requiredLength}} characters length.
+            </div>
+          </div>
+        </div>
+
+        <!--        <div class="form-group">-->
+        <!--          <label for="confirm-password">Confirm Password</label>-->
+        <!--          <input type="password" class="form-control" id="confirm-password"-->
+        <!--                 v-model="confirmPassword" @blur="$v.confirmPassword.$touch()"-->
+        <!--                 :class="{'is-invalid': $v.confirmPassword.$invalid}"/>-->
+        <!--          <div v-if="!$v.confirmPassword.required || !$v.confirmPassword.sameAs" class="invalid-feedback">-->
+        <!--            Confirm password must be equals than {{$v.confirmPassword.$params.sameAs.eq}} field.-->
+        <!--          </div>-->
+        <!--        </div>-->
+
+        <!--        <div class="form-group form-check">-->
+        <!--          <input type="checkbox" class="form-check-input" id="check" v-model="check"-->
+        <!--                 :class="{'is-invalid': $v.check.$invalid}"/>-->
+        <!--          <label class="form-check-label" for="check">Accept Terms & Conditions</label>-->
+        <!--          <div v-if="!$v.check.sameAs" class="invalid-feedback">-->
+        <!--            You must agree before submitting-->
+        <!--          </div>-->
+        <!--        </div>-->
+
+        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">
+          Register
+          <fa-icon [icon]="icons.userPlus"></fa-icon>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

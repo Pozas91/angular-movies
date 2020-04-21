@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseAPIKey: 'AIzaSyCLTMZwpHukotloBhAQIqR0EHOx6a8Si1c',
+  baseUrlApi: 'https://compare-spa-apps.firebaseio.com/'
 };
 
 /*
