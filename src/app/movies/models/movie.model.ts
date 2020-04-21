@@ -1,4 +1,4 @@
 export class Movie {
-  constructor(public owner: string, public title: string) {
+  constructor(public id: string, public owner: string, public title: string) {
   }
 }

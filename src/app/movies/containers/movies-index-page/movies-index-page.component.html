@@ -1,14 +1,20 @@
 <div class="row">
   <h1 class="text-center col-6 offset-3 mt-3">
-    <!--    Welcome {{this.$store.state.auth.name}}!-->
+    Welcome {{this.user.name}}!
   </h1>
 
-  <div class="col-12 mt-3">
+  <app-alert *ngIf="alert.message !== null" class="mt-4" [message]="alert.message"></app-alert>
+
+  <div class="col-12 mt-3 text-center" *ngIf="isLoading">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+
+  <div class="col-12 mt-3" *ngIf="!isLoading">
     <div class="row">
       <app-movie
-        *ngFor="let movie of movies; let i = index"
-        [movie]="movie"
-        [index]="i"></app-movie>
+        class="col-6 col-sm-4 col-lg-3 col-xl-2 mt-3"
+        *ngFor="let movie of movies"
+        [movie]="movie"></app-movie>
     </div>
   </div>
 

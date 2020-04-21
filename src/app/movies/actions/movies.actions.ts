@@ -6,6 +6,9 @@ export const GET_MOVIES = '[Movies] Get Movies';
 export const ADD_MOVIE = '[Movies] Add Movie';
 export const DELETE_MOVIE = '[Movies] Delete Movie';
 
+export const API_ERROR = '[Movies] Api Error';
+export const API_SUCCESS = '[Movies] Api Success';
+
 export class SetMovies implements Action {
   readonly type = SET_MOVIES;
 
@@ -27,7 +30,21 @@ export class AddMovie implements Action {
 export class DeleteMovie implements Action {
   readonly type = DELETE_MOVIE;
 
-  constructor(public payload: number) {
+  constructor(public payload: Movie) {
+  }
+}
+
+export class ApiError implements Action {
+  readonly type = API_ERROR;
+
+  constructor(public payload: string) {
+  }
+}
+
+export class ApiSuccess implements Action {
+  readonly type = API_SUCCESS;
+
+  constructor(public payload: string) {
   }
 }
 
@@ -35,4 +52,6 @@ export type MoviesActions =
   | SetMovies
   | GetMovies
   | AddMovie
-  | DeleteMovie;
+  | DeleteMovie
+  | ApiSuccess
+  | ApiError;

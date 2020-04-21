@@ -1,4 +1,4 @@
-import {User} from '../models/user.model';
+import {User} from '../models';
 import {AuthActions} from '../actions';
 
 export interface State {
@@ -17,6 +17,7 @@ export function authReducer(state = initialState, action: AuthActions.AuthAction
   switch (action.type) {
     case AuthActions.AUTHENTICATE_SUCCESS:
       const user = new User(
+        action.payload.name,
         action.payload.email,
         action.payload.userId,
         action.payload.token,

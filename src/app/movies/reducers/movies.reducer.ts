@@ -4,32 +4,46 @@ import {MoviesActions} from '../actions';
 export interface State {
   movies: Movie[];
   loading: boolean;
+  apiFeedback: string;
 }
 
 const initialState: State = {
   movies: [],
-  loading: false
+  loading: false,
+  apiFeedback: '',
 };
 
 export function moviesReducer(state = initialState, action: MoviesActions.MoviesActions) {
   switch (action.type) {
     case MoviesActions.GET_MOVIES:
-
       return {
         ...state,
-        loading: false
+        loading: true
       };
-    case MoviesActions.ADD_MOVIE:
+    case MoviesActions.SET_MOVIES:
       return {
         ...state,
-        movies: [...state.movies, action.payload]
+        movies: [...action.payload],
+        loading: false
       };
     case MoviesActions.DELETE_MOVIE:
       return {
         ...state,
         movies: state.movies.filter((movie, index) => {
-          return index !== action.payload;
+          return movie.id !== action.payload.id;
         })
+      };
+    case MoviesActions.API_ERROR:
+      return {
+        ...state,
+        loading: false,
+        apiFeedback: action.payload,
+      };
+    case MoviesActions.API_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        apiFeedback: action.payload,
       };
     default:
       return state;

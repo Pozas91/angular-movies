@@ -1,6 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Movie} from '../../models';
 import {faTrash} from '@fortawesome/free-solid-svg-icons';
+import {fromApp} from '../../../reducers';
+import {Store} from '@ngrx/store';
+import {MoviesActions} from '../../actions';
 
 @Component({
   selector: 'app-movie',
@@ -9,15 +12,15 @@ import {faTrash} from '@fortawesome/free-solid-svg-icons';
 })
 export class MovieComponent implements OnInit {
   @Input() movie: Movie;
-  @Input() index: number;
-
   icons = {
     trash: faTrash
   };
 
+  constructor(private store: Store<fromApp.AppState>) {
+  }
+
   onDeleteMovie() {
-    console.log(this.movie);
-    console.log(this.index);
+    this.store.dispatch(new MoviesActions.DeleteMovie(this.movie));
   }
 
   ngOnInit(): void {

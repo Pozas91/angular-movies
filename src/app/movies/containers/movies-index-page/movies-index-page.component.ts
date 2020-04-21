@@ -7,6 +7,7 @@ import {fromApp} from '../../../reducers';
 import {map} from 'rxjs/operators';
 import {faPlus} from '@fortawesome/free-solid-svg-icons';
 import {MoviesActions} from '../../actions';
+import {User} from '../../../auth/models';
 
 @Component({
   selector: 'app-movies',
@@ -14,9 +15,12 @@ import {MoviesActions} from '../../actions';
   styleUrls: ['./movies-index-page.component.scss']
 })
 export class MoviesIndexPageComponent implements OnInit, OnDestroy {
+  isLoading = false;
   movies: Movie[];
-  subscription: Subscription;
+  storeSub: Subscription;
   icons = {plus: faPlus};
+  user: User = null;
+  alert = {message: null};
 
   constructor(private router: Router, private route: ActivatedRoute, private store: Store<fromApp.AppState>) {
   }
@@ -24,16 +28,19 @@ export class MoviesIndexPageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.store.dispatch(new MoviesActions.GetMovies());
 
-    this.subscription = this.store.select('movies')
-      .pipe(
-        map(moviesState => moviesState.movies)
-      )
-      .subscribe((movies: Movie[]) => {
-        this.movies = movies;
+    this.storeSub = this.store.select('movies')
+      .subscribe(moviesState => {
+        this.movies = moviesState.movies;
+        this.isLoading = moviesState.loading;
+        // this.alert.message = moviesState.apiFeedback;
       });
+
+    this.store.select('auth').pipe(
+      map(authState => authState.user)
+    ).subscribe(user => this.user = user);
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.storeSub.unsubscribe();
   }
 }

@@ -13,24 +13,20 @@ export interface AuthResponseData {
   kind: string;
   idToken: string;
   email: string;
+  displayName: string;
   refreshToken: string;
   expiresIn: string;
   localId: string;
   registered?: boolean;
 }
 
-const handleAuthentication = (
-  expiresIn: number,
-  email: string,
-  userId: string,
-  token: string
-) => {
+const handleAuthentication = (expiresIn: number, name: string, email: string, userId: string, token: string) => {
   const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
-  const user = new User(email, userId, token, expirationDate);
+  const user = new User(name, email, userId, token, expirationDate);
   localStorage.setItem('userData', JSON.stringify(user));
 
   return new AuthActions.AuthenticateSuccess({
-    email, userId, token, expirationDate, redirect: true
+    name, email, userId, token, expirationDate, redirect: true
   });
 };
 
@@ -76,7 +72,7 @@ export class AuthEffects {
         }),
         // Success Handling
         map(resData => {
-          return handleAuthentication(+resData.expiresIn, resData.email, resData.localId, resData.idToken);
+          return handleAuthentication(+resData.expiresIn, resData.displayName, resData.email, resData.localId, resData.idToken);
         }),
         // Error Handling
         catchError(errorRes => handlerError(errorRes))
@@ -101,7 +97,7 @@ export class AuthEffects {
         }),
         // Success Handling
         map(resData => {
-          return handleAuthentication(+resData.expiresIn, resData.email, resData.localId, resData.idToken);
+          return handleAuthentication(+resData.expiresIn, resData.displayName, resData.email, resData.localId, resData.idToken);
         }),
         // Error Handling
         catchError(errorRes => handlerError(errorRes)),
@@ -123,11 +119,9 @@ export class AuthEffects {
   autoLogin = this.actions$.pipe(
     ofType(AuthActions.AUTO_LOGIN),
     map(() => {
+
       const userData: {
-        email: string;
-        id: string;
-        _token: string;
-        _tokenExpirationDate: string;
+        name: string; email: string; id: string; _token: string; _tokenExpirationDate: string;
       } = JSON.parse(localStorage.getItem('userData'));
 
       if (!userData) {
@@ -137,6 +131,7 @@ export class AuthEffects {
       }
 
       const loadedUser = new User(
+        userData.name,
         userData.email,
         userData.id,
         userData._token,
@@ -149,11 +144,12 @@ export class AuthEffects {
         this.authService.setLogoutTimer(expirationDuration);
 
         return new AuthActions.AuthenticateSuccess({
+          name: loadedUser.name,
           email: loadedUser.email,
           userId: loadedUser.id,
           token: loadedUser.token,
           expirationDate: new Date(userData._tokenExpirationDate),
-          redirect: false
+          redirect: true
         });
       }
 
