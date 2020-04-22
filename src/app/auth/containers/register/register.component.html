@@ -1,5 +1,5 @@
-<div class="col-6 offset-3">
-  <div class="card mt-5">
+<div class="col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 pt-5">
+  <div class="card">
     <h5 class="card-header" i18n>
       Please provide your data to register.
     </h5>
@@ -62,7 +62,7 @@
         </div>
 
         <div class="form-group">
-          <label for="confirm-password">Confirm Password</label>
+          <label for="confirm-password" i18n>Confirm Password</label>
           <input type="password" class="form-control" id="confirm-password" minlength="4"
                  formControlName="confirmPassword"
                  [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched"/>
@@ -89,9 +89,9 @@
           <input type="checkbox" class="form-check-input" id="check" formControlName="check"
                  [class.is-invalid]="check.invalid && check.touched" required/>
 
-          <label class="form-check-label" for="check">Accept Terms & Conditions</label>
+          <label class="form-check-label" for="check" i18n>Accept Terms & Conditions</label>
 
-          <div *ngIf="check.invalid && (check.dirty || check.touched)" class="invalid-feedback">
+          <div *ngIf="check.invalid && (check.dirty || check.touched)" class="invalid-feedback" i18n>
             You must agree before submitting
           </div>
         </div>

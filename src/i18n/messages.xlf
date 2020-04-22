@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="836cc5eb1a46624364b88313c18439af4dbbdaa3" datatype="html">
         <source>Oops!</source>
-        <target>¡Ups!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/not-found-page/not-found-page.component.html
           </context>
@@ -13,7 +12,6 @@
       </trans-unit>
       <trans-unit id="1540b7a5018c61dee5cd14ea093877c5388fb152" datatype="html">
         <source>You got lost on the way (Error 404)</source>
-        <target>Te has perdido (Error 404)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/not-found-page/not-found-page.component.html
           </context>
@@ -22,7 +20,6 @@
       </trans-unit>
       <trans-unit id="7ed315763adf2034dc4fa5deb7f5127e1f99471c" datatype="html">
         <source>Let me help you</source>
-        <target>Déjame ayudarte</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/containers/not-found-page/not-found-page.component.html
           </context>
@@ -33,9 +30,6 @@
         <source>
           Movies
         </source>
-        <target>
-          Películas
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/navbar/nav-bar.component.html</context>
           <context context-type="linenumber">2</context>
@@ -47,18 +41,13 @@
           <x id="START_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;fa-icon&gt;"/>
           <x id="CLOSE_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;/fa-icon&gt;"/>
         </source>
-        <target>
-          Registrar
-          <x id="START_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;fa-icon&gt;"/>
-          <x id="CLOSE_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;/fa-icon&gt;"/>
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/navbar/nav-bar.component.html</context>
           <context context-type="linenumber">14</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.html</context>
-          <context context-type="linenumber">81</context>
+          <context context-type="linenumber">99</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1323ba93b7fb4009cded46ef7cb9553e9f699832" datatype="html">
@@ -67,11 +56,6 @@
           <x id="START_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;fa-icon&gt;"/>
           <x id="CLOSE_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;/fa-icon&gt;"/>
         </source>
-        <target>
-          Entrar
-          <x id="START_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;fa-icon&gt;"/>
-          <x id="CLOSE_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;/fa-icon&gt;"/>
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/navbar/nav-bar.component.html</context>
           <context context-type="linenumber">21</context>
@@ -83,11 +67,6 @@
           <x id="START_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;fa-icon&gt;"/>
           <x id="CLOSE_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;/fa-icon&gt;"/>
         </source>
-        <target>
-          Salir
-          <x id="START_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;fa-icon&gt;"/>
-          <x id="CLOSE_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;/fa-icon&gt;"/>
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/navbar/nav-bar.component.html</context>
           <context context-type="linenumber">28</context>
@@ -97,9 +76,6 @@
         <source>
           Please provide your data to log in.
         </source>
-        <target>
-          Por favor, rellene los campos para entrar.
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/login/login.component.html</context>
           <context context-type="linenumber">3</context>
@@ -107,74 +83,63 @@
       </trans-unit>
       <trans-unit id="69b6ac577a19acc39fc0c22342092f327fff2529" datatype="html">
         <source>Email address</source>
-        <target>Correo electrónico</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/login/login.component.html</context>
           <context context-type="linenumber">15</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.html</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4010380d8df81074181352958ffe2606a3eda176" datatype="html">
         <source>
           Email is required.
         </source>
-        <target>
-          El correo electrónico es requerido.
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/login/login.component.html</context>
           <context context-type="linenumber">20</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.html</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6c58509be0a798dfd2842a526952d59bf1c245c9" datatype="html">
         <source>
           Please, indicated a valid email address.
         </source>
-        <target>
-          Por favor, indica una dirección de correo electrónico válida.
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/login/login.component.html</context>
           <context context-type="linenumber">24</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.html</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c32ef07f8803a223a83ed17024b38e8d82292407" datatype="html">
         <source>Password</source>
-        <target>Contraseña</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/login/login.component.html</context>
           <context context-type="linenumber">31</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.html</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7356c9c6b48690bec021d3620a7cf0d422143bd7" datatype="html">
         <source>
           Password is required.
         </source>
-        <target>
-          La contraseña es requerida.
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/login/login.component.html</context>
           <context context-type="linenumber">36</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.html</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">53</context>
         </context-group>
       </trans-unit>
       <trans-unit id="22df4eb8852f95df49e5f4c03bd6992295773ae3" datatype="html">
@@ -183,18 +148,9 @@
           <x id="INTERPOLATION" equiv-text="{{password.errors.minlength.requiredLength}}"/>
           characters length.
         </source>
-        <target>
-          La contraseña debe tener al menos
-          <x id="INTERPOLATION" equiv-text="{{password.errors.minlength.requiredLength}}"/>
-          caracteres de longitud.
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/login/login.component.html</context>
           <context context-type="linenumber">40</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/auth/containers/register/register.component.html</context>
-          <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
       <trans-unit id="411460e0ced853bcb632d90da2a1c1a7f5bce8af" datatype="html">
@@ -203,11 +159,6 @@
           <x id="START_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;fa-icon&gt;"/>
           <x id="CLOSE_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;/fa-icon&gt;"/>
         </source>
-        <target>
-          Entrar
-          <x id="START_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;fa-icon&gt;"/>
-          <x id="CLOSE_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;/fa-icon&gt;"/>
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/login/login.component.html</context>
           <context context-type="linenumber">46</context>
@@ -217,9 +168,6 @@
         <source>
           Please provide your data to register.
         </source>
-        <target>
-          Por favor, rellene los datos para el registro.
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.html</context>
           <context context-type="linenumber">3</context>
@@ -227,7 +175,6 @@
       </trans-unit>
       <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
         <source>Name</source>
-        <target>Nombre</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.html</context>
           <context context-type="linenumber">15</context>
@@ -237,25 +184,18 @@
         <source>
           Name is required.
         </source>
-        <target>
-          El nombre es requerido.
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.html</context>
           <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="b07445cfd772dadae17884b768fe0bd2fe1c3ee5" datatype="html">
+      <trans-unit id="150a46c1844a6f05e7bdbdffbe05e0495ed31081" datatype="html">
         <source>
           Name must be have at least
           <x id="INTERPOLATION" equiv-text="{{name.errors.minlength.requiredLength}}"/>
-          characters length.
+          characters
+          length.
         </source>
-        <target>
-          El nombre debe tener al menos
-          <x id="INTERPOLATION" equiv-text="{{name.errors.minlength.requiredLength}}"/>
-          caracteres de longitud.
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.html</context>
           <context context-type="linenumber">24</context>
@@ -267,11 +207,6 @@
           <x id="INTERPOLATION" equiv-text="{{password.errors.minlength.requiredLength}}"/>
           characters length.
         </source>
-        <target>
-          La contraseña debe tener al menos
-          <x id="INTERPOLATION" equiv-text="{{password.errors.minlength.requiredLength}}"/>
-          caracteres de longitud.
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.html</context>
           <context context-type="linenumber">57</context>
@@ -279,7 +214,6 @@
       </trans-unit>
       <trans-unit id="c1b7e6d75ff4285c7636c67e5ef259629b81725b" datatype="html">
         <source>Confirm Password</source>
-        <target>Confirmar contraseña</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.html</context>
           <context context-type="linenumber">65</context>
@@ -289,9 +223,6 @@
         <source>
           Confirm password is required.
         </source>
-        <target>
-          La confirmación de la contraseña es necesaria.
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.html</context>
           <context context-type="linenumber">73</context>
@@ -304,11 +235,6 @@
           characters
           length.
         </source>
-        <target>
-          La confirmación de la contraseña debe tener al menos
-          <x id="INTERPOLATION" equiv-text="{{confirmPassword.errors.minlength.requiredLength}}"/>
-          caracteres de longitud.
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.html</context>
           <context context-type="linenumber">77</context>
@@ -318,9 +244,6 @@
         <source>
           Confirm password not match with password field.
         </source>
-        <target>
-          La confirmación de contraseña no coincide con la contraseña.
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.html</context>
           <context context-type="linenumber">82</context>
@@ -328,7 +251,6 @@
       </trans-unit>
       <trans-unit id="e33e6c75083949e8d8579450c39756dc1ff77ca2" datatype="html">
         <source>Accept Terms &amp; Conditions</source>
-        <target>Aceptar términos y condiciones</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.html</context>
           <context context-type="linenumber">92</context>
@@ -338,9 +260,6 @@
         <source>
           You must agree before submitting
         </source>
-        <target>
-          Debes aceptar antes de enviar
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/containers/register/register.component.html</context>
           <context context-type="linenumber">94</context>
@@ -348,11 +267,8 @@
       </trans-unit>
       <trans-unit id="9802c72f2e0eda0f978f38fae11e4239e2266bdc" datatype="html">
         <source>
-          Welcome <x id="INTERPOLATION" equiv-text="{{this.user.name}}"/>!
+          Welcome<x id="INTERPOLATION" equiv-text="{{this.user.name}}"/>!
         </source>
-        <target>
-          Bienvenido <x id="INTERPOLATION" equiv-text="{{this.user.name}}"/>!
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/movies/containers/movies-index-page/movies-index-page.component.html
@@ -366,11 +282,6 @@
           <x id="START_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;fa-icon&gt;"/>
           <x id="CLOSE_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;/fa-icon&gt;"/>
         </source>
-        <target>
-          Añadir película
-          <x id="START_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;fa-icon&gt;"/>
-          <x id="CLOSE_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;/fa-icon&gt;"/>
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">
             src/app/movies/containers/movies-index-page/movies-index-page.component.html
@@ -382,9 +293,6 @@
         <source>
           Adding movie...
         </source>
-        <target>
-          Añadiendo película...
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/movies/containers/movies-new-page/movies-new-page.component.html
           </context>
@@ -393,7 +301,6 @@
       </trans-unit>
       <trans-unit id="fdf7cbdc140d0aab0f0b6c06065a0fd448ed6a2e" datatype="html">
         <source>Title</source>
-        <target>Título</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/movies/containers/movies-new-page/movies-new-page.component.html
           </context>
@@ -404,9 +311,6 @@
         <source>
           Title is required.
         </source>
-        <target>
-          El título es requerido.
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/movies/containers/movies-new-page/movies-new-page.component.html
           </context>
@@ -419,11 +323,6 @@
           <x id="INTERPOLATION" equiv-text="{{title.errors.minlength.requiredLength}}"/>
           characters length.
         </source>
-        <target>
-          El título debe tener al menos
-          <x id="INTERPOLATION" equiv-text="{{title.errors.minlength.requiredLength}}"/>
-          caracteres de longitud.
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/movies/containers/movies-new-page/movies-new-page.component.html
           </context>
@@ -436,11 +335,6 @@
           <x id="START_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;fa-icon&gt;"/>
           <x id="CLOSE_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;/fa-icon&gt;"/>
         </source>
-        <target>
-          Añadir
-          <x id="START_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;fa-icon&gt;"/>
-          <x id="CLOSE_TAG_FA-ICON" ctype="x-fa-icon" equiv-text="&lt;/fa-icon&gt;"/>
-        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/movies/containers/movies-new-page/movies-new-page.component.html
           </context>
