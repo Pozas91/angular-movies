@@ -1,5 +1,6 @@
 import {Movie} from '../models';
 import {MoviesActions} from '../actions';
+import {on} from '@ngrx/store';
 
 export interface State {
   movies: Movie[];

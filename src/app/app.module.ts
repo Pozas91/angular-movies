@@ -8,7 +8,7 @@ import {StoreModule} from '@ngrx/store';
 import {FormsModule} from '@angular/forms';
 import {SharedModule} from './shared/shared.module';
 import {HttpClientModule} from '@angular/common/http';
-import {appReducer} from './reducers/app.reducer';
+import {fromApp} from './reducers';
 import {EffectsModule} from '@ngrx/effects';
 import {CoreModule} from './core/core.module';
 import {AuthModule} from './auth/auth.module';
@@ -35,7 +35,7 @@ import {MoviesModule} from './movies/movies.module';
       logOnly: environment.production
     }),
     // Store & Actions
-    StoreModule.forRoot(appReducer),
+    StoreModule.forRoot(fromApp.appReducer),
     EffectsModule.forRoot([])
   ],
   providers: [],

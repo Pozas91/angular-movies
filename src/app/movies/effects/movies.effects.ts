@@ -1,6 +1,6 @@
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import {catchError, map, switchMap, withLatestFrom} from 'rxjs/operators';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {MoviesActions} from '../actions';
 import {Movie} from '../models';
@@ -20,9 +20,13 @@ export class MoviesEffects {
   @Effect()
   getMovies = this.actions$.pipe(
     ofType(MoviesActions.GET_MOVIES),
-    switchMap(() => {
+    withLatestFrom(this.store.select('auth')),
+    switchMap(([getMovieAction, authState]) => {
       return this.http.get<Movie[]>(
         environment.baseUrlApi + '/movies.json',
+        {
+          params: new HttpParams().set('orderBy', '"owner"').set('equalTo', '"' + authState.user.id + '"')
+        }
       ).pipe(
         catchError(errorRes => handlerError(errorRes))
       );
