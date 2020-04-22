@@ -15,6 +15,10 @@ import {AuthModule} from './auth/auth.module';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';
 import {MoviesModule} from './movies/movies.module';
+import localeEs from '@angular/common/locales/es';
+import {registerLocaleData} from '@angular/common';
+
+registerLocaleData(localeEs);
 
 @NgModule({
   imports: [

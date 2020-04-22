@@ -1,6 +1,6 @@
 <div class="col-6 offset-3">
   <div class="card mt-5">
-    <h5 class="card-header">
+    <h5 class="card-header" i18n>
       Adding movie...
     </h5>
     <div class="card-body">
@@ -11,22 +11,22 @@
 
       <form #createForm="ngForm" (ngSubmit)="onSubmit(createForm)" *ngIf="!isLoading">
         <div class="form-group">
-          <label for="title">Title</label>
+          <label for="title" i18n>Title</label>
           <input type="text" class="form-control" id="title" name="title" [(ngModel)]="movie.title"
                  #title="ngModel" minlength="3" [class.is-invalid]="title.invalid" required/>
 
           <div *ngIf="title.invalid && (title.dirty || title.touched)" class="invalid-feedback">
-            <div *ngIf="title.errors.required">
+            <div *ngIf="title.errors.required" i18n>
               Title is required.
             </div>
 
-            <div *ngIf="title.errors.minlength">
+            <div *ngIf="title.errors.minlength" i18n>
               Title must be have at least {{title.errors.minlength.requiredLength}} characters length.
             </div>
           </div>
         </div>
 
-        <button type="submit" class="btn btn-success" [disabled]="createForm.invalid">
+        <button type="submit" class="btn btn-success" [disabled]="createForm.invalid" i18n>
           Add
           <fa-icon [icon]="icons.plus"></fa-icon>
         </button>

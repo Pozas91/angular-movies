@@ -56,14 +56,15 @@ const handlerError = (errorRes: any) => {
 export class AuthEffects {
 
   @Effect()
-  authSignUp = this.actions$.pipe(
+  authRegister = this.actions$.pipe(
     ofType(AuthActions.REGISTER_START),
-    switchMap((signUpAction: AuthActions.RegisterStart) => {
+    switchMap((authData: AuthActions.RegisterStart) => {
       return this.http.post<AuthResponseData>(
         'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + environment.firebaseAPIKey,
         {
-          email: signUpAction.payload.email,
-          password: signUpAction.payload.password,
+          displayName: authData.payload.name,
+          email: authData.payload.email,
+          password: authData.payload.password,
           returnSecureToken: true
         }
       ).pipe(

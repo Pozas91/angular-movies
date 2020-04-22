@@ -1,6 +1,6 @@
 <div class="col-6 offset-3">
   <div class="card mt-5">
-    <h5 class="card-header">
+    <h5 class="card-header" i18n>
       Please provide your data to register.
     </h5>
     <div class="card-body">
@@ -9,76 +9,94 @@
         <app-loading-spinner></app-loading-spinner>
       </div>
 
-      <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" *ngIf="!isLoading">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
 
         <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" id="name" name="name" [(ngModel)]="user.name"
-                 #name="ngModel" minlength="3" [class.is-invalid]="name.invalid" required/>
+          <label for="name" i18n>Name</label>
+          <input type="text" class="form-control" id="name" formControlName="name" minlength="3"
+                 [class.is-invalid]="name.invalid && name.touched" required/>
 
           <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
-            <div *ngIf="name.errors.required">
+            <div *ngIf="name.errors.required" i18n>
               Name is required.
             </div>
 
-            <div *ngIf="name.errors.minlength">
-              Name must be have at least {{name.errors.minlength.requiredLength}} characters length.
+            <div *ngIf="name.errors.minlength" i18n>
+              Name must be have at least {{name.errors.minlength.requiredLength}} characters
+              length.
             </div>
           </div>
         </div>
 
         <div class="form-group">
-          <label for="email">Email address</label>
-          <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email"
-                 #email="ngModel" email [class.is-invalid]="email.invalid" required/>
+          <label for="email" i18n>Email address</label>
+          <input type="email" class="form-control" id="email" formControlName="email" email
+                 [class.is-invalid]="email.invalid && email.touched" required/>
 
           <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
-            <div *ngIf="email.errors.required">
+            <div *ngIf="email.errors.required" i18n>
               Email is required.
             </div>
 
-            <div *ngIf="email.errors.email">
+            <div *ngIf="email.errors.email" i18n>
               Please, indicated a valid email address.
             </div>
           </div>
         </div>
 
         <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" id="password" name="password" required [(ngModel)]="user.password"
-                 #password="ngModel" minlength="4" [class.is-invalid]="password.invalid"/>
+          <label for="password" i18n>Password</label>
+          <input type="password" class="form-control" id="password" required formControlName="password"
+                 [class.is-invalid]="password.invalid && password.touched" minlength="4"/>
 
           <div *ngIf="password.invalid && (password.dirty || password.touched)" class="invalid-feedback">
-            <div *ngIf="password.errors.required">
+            <div *ngIf="password.errors.required" i18n>
               Password is required.
             </div>
 
-            <div *ngIf="password.errors.minlength">
-              Password must be have at least {{password.errors.minlength.requiredLength}} characters length.
+            <div *ngIf="password.errors.minlength" i18n>
+              Password must be have at least {{password.errors.minlength.requiredLength}}
+              characters length.
             </div>
           </div>
         </div>
 
-        <!--        <div class="form-group">-->
-        <!--          <label for="confirm-password">Confirm Password</label>-->
-        <!--          <input type="password" class="form-control" id="confirm-password"-->
-        <!--                 v-model="confirmPassword" @blur="$v.confirmPassword.$touch()"-->
-        <!--                 :class="{'is-invalid': $v.confirmPassword.$invalid}"/>-->
-        <!--          <div v-if="!$v.confirmPassword.required || !$v.confirmPassword.sameAs" class="invalid-feedback">-->
-        <!--            Confirm password must be equals than {{$v.confirmPassword.$params.sameAs.eq}} field.-->
-        <!--          </div>-->
-        <!--        </div>-->
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" class="form-control" id="confirm-password" minlength="4"
+                 formControlName="confirmPassword"
+                 [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched"/>
 
-        <!--        <div class="form-group form-check">-->
-        <!--          <input type="checkbox" class="form-check-input" id="check" v-model="check"-->
-        <!--                 :class="{'is-invalid': $v.check.$invalid}"/>-->
-        <!--          <label class="form-check-label" for="check">Accept Terms & Conditions</label>-->
-        <!--          <div v-if="!$v.check.sameAs" class="invalid-feedback">-->
-        <!--            You must agree before submitting-->
-        <!--          </div>-->
-        <!--        </div>-->
+          <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)"
+               class="invalid-feedback">
 
-        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">
+            <div *ngIf="confirmPassword.errors.required" i18n>
+              Confirm password is required.
+            </div>
+
+            <div *ngIf="confirmPassword.errors.minlength" i18n>
+              Confirm password must be have at least {{confirmPassword.errors.minlength.requiredLength}} characters
+              length.
+            </div>
+
+            <div *ngIf="confirmPassword.errors.confirmed" i18n>
+              Confirm password not match with password field.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="check" formControlName="check"
+                 [class.is-invalid]="check.invalid && check.touched" required/>
+
+          <label class="form-check-label" for="check">Accept Terms & Conditions</label>
+
+          <div *ngIf="check.invalid && (check.dirty || check.touched)" class="invalid-feedback">
+            You must agree before submitting
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid" i18n>
           Register
           <fa-icon [icon]="icons.userPlus"></fa-icon>
         </button>

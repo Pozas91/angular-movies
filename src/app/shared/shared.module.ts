@@ -4,19 +4,17 @@ import {LoadingSpinnerComponent} from './loading-spinner/loading-spinner.compone
 import {AlertComponent} from './alert/alert.component';
 
 
+const COMPONENTS = [
+  LoadingSpinnerComponent,
+  AlertComponent
+];
+
 @NgModule({
-  declarations: [
-    LoadingSpinnerComponent,
-    AlertComponent
-  ],
+  declarations: COMPONENTS,
   imports: [
     CommonModule
   ],
-  exports: [
-    LoadingSpinnerComponent,
-    CommonModule,
-    AlertComponent
-  ]
+  exports: COMPONENTS
 })
 export class SharedModule {
 }
